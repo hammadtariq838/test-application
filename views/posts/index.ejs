@@ -1,0 +1,25 @@
+<% layout('layouts/boilerplate')%>
+
+<h1>All posts</h1>
+<div>
+    <a href="/posts/new">Add post</a>
+</div>
+<% for (let post of posts){%>
+<div class="card" mb-3>
+    <div class="row">
+        <div class="col-md-4">
+            <img class="img-fluid" alt="" src="https://source.unsplash.com/random/?user/">
+        </div>
+        <div class="col-md-8">
+            <div class="card-body">
+                <h5 class="card-title"><%= post.title %> </h5>
+                <p class="card-text"><%= post.body %></p>
+                <p class="card-text">
+                    <small class="text-muted"><%= post.member_id%></small>
+                </p>
+                <a class="btn btn-primary" href="/posts/<%=post.id%>">View <%=post.title%></a>
+            </div>
+        </div>
+    </div>
+</div>
+<% }%>
